@@ -4,11 +4,11 @@ public class SalesTaxCalculator {
         //set inputs
         State state;
         if(args[0].equals("Alaska")){
-            state = new Alaska("Alaska");
+            state = new Alaska();
         } else if(args[0].equals("Indiana")){
-            state = new Indiana("Indiana");
+            state = new Indiana();
         } else {
-            state = new Hawaii("Hawaii");
+            state = new Hawaii();
         }
         double saleAmount = Double.parseDouble(args[1]);
 

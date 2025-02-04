@@ -20,11 +20,14 @@ public abstract class State {
     }
 
     //constructor
-    public State(String name, SalesTaxBehavior behavior){
+    public State(String name){
         this.name = name;
-        this.behavior = behavior;
     }
 
     //showTax signature
-    public abstract void showTax(double value);
+    public void showTax(double value){
+        double total = getBehavior().compute(value);
+        DecimalFormat df = new DecimalFormat("#.##");
+        System.out.print(df.format(total));
+    }
 }
